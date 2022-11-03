@@ -14,7 +14,7 @@ import java.util.List;
 public class LibraryController {
     @Autowired
     private LibraryRepository libraryRepository;
-    @GetMapping("list")
+    @GetMapping("/list")
     public List<Library> displayAllBooks(){
         return libraryRepository.findAll();
     }
