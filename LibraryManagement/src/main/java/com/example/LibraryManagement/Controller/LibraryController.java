@@ -26,9 +26,7 @@ public class LibraryController {
     @GetMapping("/list/{id}")
     public ResponseEntity<Library> getLibraryDetails(@PathVariable Long id){
         Library library = libraryRepository.findById(id).get();
-
         return ResponseEntity.ok(library);
-
     }
 
 }

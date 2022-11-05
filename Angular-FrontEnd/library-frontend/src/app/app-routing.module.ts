@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookListComponent } from './book-list/book-list.component';
+import { LibraryDetailsComponent } from './library-details/library-details.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'', component:BookListComponent},
+  {path:'view-book/:id', component:LibraryDetailsComponent},
+  {path: '**', redirectTo:'', pathMatch: 'full'}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

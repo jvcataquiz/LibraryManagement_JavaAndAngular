@@ -6,7 +6,10 @@
               <div class="card-body">
                 <h4 class="card-title">{{book.titleOfBook}}</h4>
                 <p class="card-text">{{book.description}}</p>
-                <a href="#" class="btn btn-primary">View</a>
+          
+                <button class="btn btn-primary" (click) = "viewBookDetails(book.id)">
+                  View
+                </button>
               </div>
         </div>
     </div>

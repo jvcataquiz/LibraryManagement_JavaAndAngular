@@ -15,4 +15,8 @@ export class LibraryService {
   getDataFromRestApi():Observable<Library[]>{
     return this.httpClient.get<Library[]>(`${this.urlOfRestApi}`);
   }
+  getBookDetails(id:number):Observable<Library>{
+    return this.httpClient.get<Library>(`${this.urlOfRestApi}/${id}`)
+
+  }
 }
