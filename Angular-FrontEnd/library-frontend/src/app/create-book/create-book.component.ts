@@ -16,14 +16,11 @@ export class CreateBookComponent implements OnInit {
   }
 
   Submit(){
-
     this.libraryService.createNewBookRecord(this.library).subscribe(data => {
       console.log(data);
       this.router.navigate([""])
     },
     error => console.log(error));
-
-  
   }
 
 }

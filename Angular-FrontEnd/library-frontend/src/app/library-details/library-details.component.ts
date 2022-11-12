@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Library } from '../library';
 import { LibraryService } from '../library.service';
 
@@ -13,7 +13,7 @@ export class LibraryDetailsComponent implements OnInit {
 
   id!:number;
   library!: Library;
-  constructor(private libraryService: LibraryService, private getId: ActivatedRoute) { }
+  constructor(private libraryService: LibraryService, private getId: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.getId.snapshot.params['id'];
@@ -22,4 +22,9 @@ export class LibraryDetailsComponent implements OnInit {
     })
   }
 
+  deleteBook(id: number){
+    this.libraryService.deleteBookByID(id).subscribe(data =>{
+      this.router.navigate([" "])
+    })
+  }
 }

@@ -21,5 +21,8 @@ export class LibraryService {
   createNewBookRecord(libray: Library):Observable<Object>{
     return this.httpClient.post(`${this.urlOfRestApi}`, libray);
   }
+  deleteBookByID(id: number):Observable<Object>{
+  return this.httpClient.delete(`${this.urlOfRestApi}/${id}`)
+  }
 
 }
