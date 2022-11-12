@@ -28,5 +28,11 @@ public class LibraryController {
         Library library = libraryRepository.findById(id).get();
         return ResponseEntity.ok(library);
     }
+    @DeleteMapping("/list/{id}")
+    public void deleteBook(@PathVariable Long id){
+//        Library library = libraryRepository.findById(id).get();
+//        libraryRepository.delete(library);
+        libraryRepository.deleteById(id);
+    }
 
 }
