@@ -17,6 +17,9 @@ export class LibraryService {
   }
   getBookDetails(id:number):Observable<Library>{
     return this.httpClient.get<Library>(`${this.urlOfRestApi}/${id}`)
-
   }
+  createNewBookRecord(libray: Library):Observable<Object>{
+    return this.httpClient.post(`${this.urlOfRestApi}`, libray);
+  }
+
 }
